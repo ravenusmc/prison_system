@@ -16,13 +16,14 @@
       <th>Last Name</th>
       <th>First Name</th>
       <th>Phone Number</th>
+      <th>&nbsp;</th>
     </tr>
 
-    <?php foreach ($crimal as $c) : ?>
+    <?php foreach ($criminals as $criminal) : ?>
     <tr> 
-      <td><?php echo $c['last_name']; ?></td>
-      <td><?php echo $c['first_name']; ?></td>
-      <td><?php echo $c['phone']; ?></td>
+      <td><?php echo $criminal['last_name']; ?></td>
+      <td><?php echo $criminal['first_name']; ?></td>
+      <td><?php echo $criminal['phone']; ?></td>
       <td>
         <form action="index.php" method="post">
           <input type="hidden" name="action" value="delete_student">
@@ -39,18 +40,3 @@
 </main>
 
 <?php include '../view/footer.php'; ?>
-
-    <?php foreach ($students as $student) : ?>
-    <tr>
-      <td><?php echo $student['student_name']; ?></td>
-      <td><?php echo $student['student_grade']; ?></td>
-      <td><?php echo $student['letter_grade']; ?></td>
-      <td>
-        <form action="index.php" method="post">
-          <input type="hidden" name="action" value="delete_student">
-          <input type="hidden" name="studentID" value="<?php echo $student['studentID']; ?>">
-          <input class='initial_btn font' type="submit" value="Delete">
-        </form>
-      </td>
-    </tr>
-    <?php endforeach; ?>

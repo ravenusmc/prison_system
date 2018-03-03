@@ -3,7 +3,7 @@
 
 //Pulling in the databases
 require('../model/database.php');
-//require('../model/student_db.php');
+require('../model/criminal_db.php');
 
 
 //Setting a default action 
@@ -15,16 +15,16 @@ if ($action == NULL) {
     }
 }
 
-if ($action == 'list_criminals') {
+
+
+switch ($action){
+
+  case 'list_criminals':
+    $criminals = get_all_criminals();
+    echo $criminals;
     include('criminal_list.php');
+    break;
 }
-
-// switch ($action){
-
-//   case 'list_criminals':
-//     include('criminal_list.php');
-
-// }
 
 
 ?>
