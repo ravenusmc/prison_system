@@ -2,8 +2,8 @@
 //This file will act as the controller for my midterm PHP project
 
 //Pulling in the databases
-// require('../model/database.php');
-// require('../model/student_db.php');
+require('../model/database.php');
+//require('../model/student_db.php');
 
 
 //Setting a default action 
