@@ -19,16 +19,23 @@ if ($action == NULL) {
 //Switch statment to determine which page to go to. 
 switch ($action) {
 
-  case 'list_criminals':
-    $criminals = get_all_criminals();
-    include('criminal_list.php');
-    break;
-  case 'address_list':
-    $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
-        FILTER_VALIDATE_INT);
-    $address = get_address($criminal_id);
-    include('address.php');
-    break;
+    //This case will bring the user to the page that shows all of the prisoners
+    case 'list_criminals':
+        $criminals = get_all_criminals();
+        include('criminal_list.php');
+        break;
+    //This case will show the address of the prisoner
+    case 'address_list':
+        //Getting the input from what the user selects
+        $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
+            FILTER_VALIDATE_INT);
+        //Getting the address info from the database
+        $address = get_address($criminal_id);
+        //Getting the prisoner info from the database
+        $sole_prisoner = get_sole_prisoner($criminal_id);
+        //Sending the user to the correct page
+        include('address.php');
+        break;
 }
 
 

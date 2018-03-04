@@ -28,6 +28,19 @@
     return $address;
   }
 
+  //This function will get info on individual prisoner. 
+  function get_sole_prisoner($criminal_id){
+    global $db;
+    $query = 'SELECT * FROM criminals
+        WHERE criminal_id = :criminal_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':criminal_id', $criminal_id);
+    $statement->execute();
+    $sole_prisoner = $statement->fetch();
+    $statement->closeCursor();
+    return $sole_prisoner; 
+  }
+
 
 
 ?>
