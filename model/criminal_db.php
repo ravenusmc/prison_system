@@ -15,6 +15,19 @@
     return $criminals; 
   }
 
+  //This function will get the adddress of the criminal
+  function get_address($criminal_id){
+    global $db;
+    $query = 'SELECT * FROM address
+        WHERE criminal_id = :criminal_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':criminal_id', $criminal_id);
+    $statement->execute();
+    $address = $statement->fetch();
+    $statement->closeCursor();
+    return $address;
+  }
+
 
 
 ?>

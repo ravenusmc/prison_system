@@ -18,3 +18,6 @@ CREATE TABLE address (
 
 INSERT INTO criminals (last_name, first_name, phone)
 VALUES ('Thompson', 'Nucky', '503-555-1234');
+
+INSERT INTO address (criminal_id, street, town, state, zip)
+VALUES (1, '42 Boardwalk Blvd', 'Atlantic City', 'NJ', 00001);

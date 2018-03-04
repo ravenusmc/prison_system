@@ -26,9 +26,9 @@
       <td><?php echo $criminal['phone']; ?></td>
       <td>
         <form action="index.php" method="post">
-          <input type="hidden" name="action" value="delete_student">
-          <input type="hidden" name="criminal_id" value="<?php echo $c['criminal_id']; ?>">
-          <input class='initial_btn font' type="submit" value="Delete">
+          <input type="hidden" name="action" value="address_list">
+          <input type="hidden" name="criminal_id" value="<?php echo $criminal['criminal_id']; ?>">
+          <input class='initial_btn font' type="submit" value="See Address">
         </form>
       </td>
     </tr>

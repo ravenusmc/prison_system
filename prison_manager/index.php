@@ -16,13 +16,18 @@ if ($action == NULL) {
 }
 
 
-
-switch ($action){
+//Switch statment to determine which page to go to. 
+switch ($action) {
 
   case 'list_criminals':
     $criminals = get_all_criminals();
-    echo $criminals;
     include('criminal_list.php');
+    break;
+  case 'address_list':
+    $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
+        FILTER_VALIDATE_INT);
+    $address = get_address($criminal_id);
+    include('address.php');
     break;
 }
 
