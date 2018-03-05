@@ -1,6 +1,5 @@
 <?php
 
-
   //This function will get a query from the database of all the criminals 
   //It will then return that query so that the criminal_list page may 
   //display all of the criminals.
@@ -41,9 +40,18 @@
     return $sole_prisoner; 
   }
 
-  function add_prisoner() {
+  function add_prisoner($first_name, $last_name, $phone) {
     global $db;
-    echo 'Inside add prisoner func';
+    $query = 'INSERT INTO criminals
+                  (first_name, last_name, phone)
+                VALUES
+                  (:first_name, :last_name, :phone)';
+      $statement = $db->prepare($query);
+      $statement->bindValue(':first_name', $first_name);
+      $statement->bindValue(':last_name', $last_name);
+      $statement->bindValue(':phone', $phone);
+      $statement->execute();
+      $statement->closeCursor();
   }
 
 ?>

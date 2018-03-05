@@ -41,18 +41,17 @@ switch ($action) {
         include('add_prisoner.php');
         break;
     //This case will add a prisoner to the DB. 
-    case 'Add_Prisoner':
+    case 'add_prisoner':
 
         //Getting the user input
         $first_name = filter_input(INPUT_POST, 'first_name');
         $last_name = filter_input(INPUT_POST, 'last_name');
         $phone = filter_input(INPUT_POST, 'phone');
 
-        add_prisoner();
+        add_prisoner($first_name, $last_name, $phone);
 
         header('Location: .?action=list_criminals');
         break;
 }
-
 
 ?>

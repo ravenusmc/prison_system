@@ -7,12 +7,13 @@
 
   <form action="index.php" method="post">
 
+    <input type="hidden" name="action" value="add_prisoner" />
     <input placeholder='First Name' type='text' name='first_name'>&nbsp;
     <input placeholder='Last Name' type='text' name='last_name'>&nbsp;
     <input placeholder='Phone Number' type='text' name='phone'>&nbsp;&nbsp;&nbsp;
 
     <label>&nbsp;</label>
-    <input type="submit" value="Add_Prisoner" />
+    <input type="submit" value="Add Prisoner" />
 
   </form>
 
