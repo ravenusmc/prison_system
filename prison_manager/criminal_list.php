@@ -16,7 +16,7 @@
       <th>Last Name</th>
       <th>First Name</th>
       <th>Phone Number</th>
-      <th>&nbsp;</th>
+      <th>Address Info</th>
     </tr>
 
     <?php foreach ($criminals as $criminal) : ?>
@@ -36,6 +36,9 @@
 
   </table>
   <!-- End table -->
+
+
+  <button href="?action=add_prisoner">Add Prisoner</button>
 
 </main>
 

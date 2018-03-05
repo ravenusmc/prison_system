@@ -1,10 +1,11 @@
 <?php include '../view/header.php'; ?>
+<link rel="stylesheet" type="text/css" href="../assets/css/generic.css">
 <link rel="stylesheet" type="text/css" href="../assets/css/address.css">
+
 
 <header>
   <h1>Address For Selected Prisoner</h1>
 </header>
-
 
 <main>
 
@@ -16,13 +17,6 @@
     <h3>Zip: <?php echo $address['zip']; ?></h3>
   </div>
 
-
 </main>
-
-
-
-
-
-
 
 <?php include '../view/footer.php'; ?>
