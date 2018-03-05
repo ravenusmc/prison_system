@@ -28,7 +28,7 @@
         <form action="index.php" method="post">
           <input type="hidden" name="action" value="address_list">
           <input type="hidden" name="criminal_id" value="<?php echo $criminal['criminal_id']; ?>">
-          <input class='initial_btn font' type="submit" value="See Address">
+          <input class='input_style' type="submit" value="See Address">
         </form>
       </td>
     </tr>
@@ -38,7 +38,7 @@
   <!-- End table -->
 
 
-  <button href="?action=add_prisoner">Add Prisoner</button>
+  <a href="?action=add_prisoner_form">Add Prisoner</a>
 
 </main>
 

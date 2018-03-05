@@ -41,6 +41,9 @@
     return $sole_prisoner; 
   }
 
-
+  function add_prisoner() {
+    global $db;
+    echo 'Inside add prisoner func';
+  }
 
 ?>

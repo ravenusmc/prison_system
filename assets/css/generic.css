@@ -6,11 +6,31 @@ CSS in this file will be used throughout the site.
   text-align: center;
 }
 
+.input_style {
+  padding: 10px;
+  background-color: orange;
+  border: 2px solid orange;
+  border-radius: 8px;
+}
+
+.input_style:hover {
+  background-color: yellow;
+  border: 2px solid yellow;
+}
+
 button {
   padding: 10px;
   background-color: orange;
   border: 2px solid orange;
   border-radius: 8px;
+}
+
+button a {
+  color: black;
+}
+
+button a:hover{
+  background-color: yellow;
 }
 
 footer {

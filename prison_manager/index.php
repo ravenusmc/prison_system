@@ -36,6 +36,22 @@ switch ($action) {
         //Sending the user to the correct page
         include('address.php');
         break;
+    //This case will take the user to the add prisoner form
+    case 'add_prisoner_form':
+        include('add_prisoner.php');
+        break;
+    //This case will add a prisoner to the DB. 
+    case 'Add_Prisoner':
+
+        //Getting the user input
+        $first_name = filter_input(INPUT_POST, 'first_name');
+        $last_name = filter_input(INPUT_POST, 'last_name');
+        $phone = filter_input(INPUT_POST, 'phone');
+
+        add_prisoner();
+
+        header('Location: .?action=list_criminals');
+        break;
 }
 
 
