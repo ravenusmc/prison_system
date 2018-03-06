@@ -24,6 +24,14 @@ switch ($action) {
         $criminals = get_all_criminals();
         include('criminal_list.php');
         break;
+    case 'add_address':
+    
+        //Getting the prisoner id to add into the address form. 
+        $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
+            FILTER_VALIDATE_INT);
+
+        include('add_address.php');
+        break;
     //This case will show the address of the prisoner
     case 'address_list':
         //Getting the input from what the user selects

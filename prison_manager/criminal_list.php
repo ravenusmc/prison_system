@@ -16,6 +16,7 @@
       <th>Last Name</th>
       <th>First Name</th>
       <th>Phone Number</th>
+      <th>Add Address</th>
       <th>Address Info</th>
       <th>Delete Prisoner</th>
     </tr>
@@ -25,6 +26,13 @@
       <td><?php echo $criminal['last_name']; ?></td>
       <td><?php echo $criminal['first_name']; ?></td>
       <td><?php echo $criminal['phone']; ?></td>
+      <td>
+        <form action="index.php" method="post">
+          <input type="hidden" name="action" value="add_address">
+          <input type="hidden" name="criminal_id" value="<?php echo $criminal['criminal_id']; ?>">
+          <input class='input_style' type="submit" value="Add Address">
+        </form>
+      </td>
       <td>
         <form action="index.php" method="post">
           <input type="hidden" name="action" value="address_list">
