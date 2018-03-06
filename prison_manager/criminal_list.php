@@ -17,6 +17,7 @@
       <th>First Name</th>
       <th>Phone Number</th>
       <th>Address Info</th>
+      <th>Delete Prisoner</th>
     </tr>
 
     <?php foreach ($criminals as $criminal) : ?>
@@ -29,6 +30,13 @@
           <input type="hidden" name="action" value="address_list">
           <input type="hidden" name="criminal_id" value="<?php echo $criminal['criminal_id']; ?>">
           <input class='input_style' type="submit" value="See Address">
+        </form>
+      </td>
+      <td>
+        <form action="index.php" method="post">
+          <input type="hidden" name="action" value="delete_criminal">
+          <input type="hidden" name="criminal_id" value="<?php echo $criminal['criminal_id']; ?>">
+          <input class='initial_btn font' type="submit" value="Delete">
         </form>
       </td>
     </tr>

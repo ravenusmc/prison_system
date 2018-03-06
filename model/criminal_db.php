@@ -54,4 +54,14 @@
       $statement->closeCursor();
   }
 
+  function delete_prisoner($criminal_id){
+    global $db;
+    $query = 'DELETE FROM criminals 
+              WHERE criminal_id = :criminal_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':criminal_id', $criminal_id);
+    $statement->execute();
+    $statement->closeCursor();
+  }
+
 ?>

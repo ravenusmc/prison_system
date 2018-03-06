@@ -52,6 +52,19 @@ switch ($action) {
 
         header('Location: .?action=list_criminals');
         break;
+    //This case will delete a prisoner 
+    case 'delete_criminal':
+
+        //Getting the criminal id when the user pushes the delete key.
+        $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
+            FILTER_VALIDATE_INT);
+
+        #Calling the delete prisoner function to delete a prisoner.
+        delete_prisoner($criminal_id);
+        
+        //Redirecting the site back to the list students page.
+        header('Location: .?action=list_criminals');
+        break;
 }
 
 ?>
