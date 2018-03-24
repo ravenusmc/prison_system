@@ -40,6 +40,7 @@
     return $sole_prisoner; 
   }
 
+  //This function adds a prisoner to the database
   function add_prisoner($first_name, $last_name, $phone) {
     global $db;
     $query = 'INSERT INTO criminals
@@ -54,9 +55,21 @@
       $statement->closeCursor();
   }
 
+  //This function deletes a prisoner from the db
   function delete_prisoner($criminal_id){
     global $db;
     $query = 'DELETE FROM criminals 
+              WHERE criminal_id = :criminal_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':criminal_id', $criminal_id);
+    $statement->execute();
+    $statement->closeCursor();
+  }
+
+  //This function deletes a prisoners address from database. 
+  function delete_address($criminal_id){
+    global $db;
+    $query = 'DELETE FROM address 
               WHERE criminal_id = :criminal_id';
     $statement = $db->prepare($query);
     $statement->bindValue(':criminal_id', $criminal_id);

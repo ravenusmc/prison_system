@@ -24,6 +24,10 @@ switch ($action) {
         $criminals = get_all_criminals();
         include('criminal_list.php');
         break;
+    case 'see_prisoner':
+        $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
+            FILTER_VALIDATE_INT);
+        break;
     case 'add_address':
     
         //Getting the prisoner id to add into the address form. 
@@ -66,6 +70,9 @@ switch ($action) {
         //Getting the criminal id when the user pushes the delete key.
         $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
             FILTER_VALIDATE_INT);
+
+        #Calling the delete address function to delete the prisoner's address. 
+        delete_address($criminal_id);
 
         #Calling the delete prisoner function to delete a prisoner.
         delete_prisoner($criminal_id);

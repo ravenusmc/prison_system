@@ -16,6 +16,23 @@ CREATE TABLE address (
     FOREIGN KEY (criminal_id) REFERENCES criminals(criminal_id)
 );
 
+
+CREATE TABLE crimes (
+    crime_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    criminal_id INT NOT NULL,
+    crime_committed VARCHAR(30),
+    officer_id INT NOT NULL,
+    FOREIGN KEY (criminal_id) REFERENCES criminals(criminal_id),
+    FOREIGN KEY (officer_id) REFERENCES officers(officer_id)
+);
+
+CREATE TABLE officers (
+    officer_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    last VARCHAR2(15),
+    first VARCHAR2(10),
+);
+
+
 INSERT INTO criminals (last_name, first_name, phone)
 VALUES ('Thompson', 'Nucky', '503-555-1234');
 
