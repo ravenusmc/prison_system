@@ -27,6 +27,15 @@ switch ($action) {
     case 'see_prisoner':
         $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
             FILTER_VALIDATE_INT);
+
+        //Getting information on sole prisoner 
+        $prisoner_info = get_sole_prisoner($criminal_id);
+
+        //Getting address information about prisoner 
+        $prisoner_address = get_address($criminal_id);
+
+
+        include('prisoner_info.php');
         break;
     case 'add_address':
     
