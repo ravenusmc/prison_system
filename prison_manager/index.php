@@ -24,6 +24,7 @@ switch ($action) {
         $criminals = get_all_criminals();
         include('criminal_list.php');
         break;
+    //This route will take the user to the page showing all information about the prisoner
     case 'see_prisoner':
         $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
             FILTER_VALIDATE_INT);
@@ -37,7 +38,12 @@ switch ($action) {
 
         include('prisoner_info.php');
         break;
-    case 'add_address':
+    //This case will take the user to the add prisoner form
+    case 'add_prisoner_form':
+        include('add_prisoner.php');
+        break;
+    //Adding a prisoner to the database
+    case 'add_prisoner':
 
         //Getting the user input
         $first_name = filter_input(INPUT_POST, 'first_name');
@@ -46,21 +52,34 @@ switch ($action) {
 
         add_prisoner($first_name, $last_name, $phone);
 
+        header('Location: .?action=list_criminals');
+        break;
+    //This will take the user to the add address form 
+    case 'add_address_form':
+        $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
+            FILTER_VALIDATE_INT);
         include('add_address.php');
         break;
-    //This method will allow the user to add a crime to the database
-    case 'add_crime':
+    case 'add_address':
+
+        //Getting the prisoner id to add into the address form. 
+        $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
+            FILTER_VALIDATE_INT);
+
         //Getting the user input
         $street  = filter_input(INPUT_POST, 'street');
         $town = filter_input(INPUT_POST, 'town');
         $state = filter_input(INPUT_POST, 'state');
         $zip = filter_input(INPUT_POST, 'zip');
 
-        //Getting the prisoner id to add into the address form. 
+        add_address($criminal_id, $street, $town, $state, $zip);
+
+        header('Location: .?action=list_criminals');
+        break;
+    //This method will allow the user to add a crime to the database
+    case 'add_crime_form':
         $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
             FILTER_VALIDATE_INT);
-
-
         include('add_crime.php');
         break;
     //This case will show the address of the prisoner
@@ -74,10 +93,6 @@ switch ($action) {
         $sole_prisoner = get_sole_prisoner($criminal_id);
         //Sending the user to the correct page
         include('address.php');
-        break;
-    //This case will take the user to the add prisoner form
-    case 'add_prisoner_form':
-        include('add_prisoner.php');
         break;
     //This case will delete a prisoner 
     case 'delete_criminal':

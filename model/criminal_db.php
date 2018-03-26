@@ -1,4 +1,5 @@
 <?php
+  
 
   //This function will get a query from the database of all the criminals 
   //It will then return that query so that the criminal_list page may 
@@ -56,16 +57,18 @@
   }
 
   //This function adds an address to the database
-  function add_prisoner($criminal_id, $street, $town, $state, $zip) {
+  function add_address($criminal_id, $street, $town, $state, $zip) {
     global $db;
     $query = 'INSERT INTO address
                   (criminal_id, street, town, state, zip)
                 VALUES
                   (:criminal_id, :street, :town, :state, :zip)';
       $statement = $db->prepare($query);
-      $statement->bindValue(':first_name', $first_name);
-      $statement->bindValue(':last_name', $last_name);
-      $statement->bindValue(':phone', $phone);
+      $statement->bindValue(':criminal_id', $criminal_id);
+      $statement->bindValue(':street', $street);
+      $statement->bindValue(':town', $town);
+      $statement->bindValue(':state', $state);
+      $statement->bindValue(':zip', $zip);
       $statement->execute();
       $statement->closeCursor();
   }

@@ -25,10 +25,10 @@
       
       <td>
         <form action="index.php" method="post">
-        <input type="hidden" name="action" value="see_prisoner">
-        <input type="hidden" name="criminal_id" value="<?php echo $criminal['criminal_id']; ?>">
-        <input class='input_style' type="submit" value="See Prisoner">
-      </form>
+          <input type="hidden" name="action" value="see_prisoner">
+          <input type="hidden" name="criminal_id" value="<?php echo $criminal['criminal_id']; ?>">
+          <input class='input_style' type="submit" value="See Prisoner">
+        </form>
       </td>
       <td><?php echo $criminal['last_name']; ?></td>
       <td><?php echo $criminal['first_name']; ?></td>

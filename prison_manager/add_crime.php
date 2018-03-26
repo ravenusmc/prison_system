@@ -6,7 +6,7 @@
   <h2>Please Fill Out Form to Add Prisoner</h2>
 
   <form action="index.php" method="post">
-
+    <?php echo $criminal_id; ?>
     <input type="hidden" name="action" value="add_crime" />
 
     <!-- The below inputs will deal with getting information for the prisoner -->
