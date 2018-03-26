@@ -7,18 +7,18 @@
 
   <form action="index.php" method="post">
 
-    <input type="hidden" name="action" value="add_prisoner" />
+    <input type="hidden" name="action" value="add_address" />
 
     <!-- The below inputs will deal with getting information for the prisoner -->
     <input placeholder='First Name' type='text' name='first_name'>&nbsp;
     <input placeholder='Last Name' type='text' name='last_name'>&nbsp;
     <input placeholder='Phone Number' type='text' name='phone'>&nbsp;&nbsp;&nbsp;
 
+
     <label>&nbsp;</label>
     <input type="submit" value="Add Prisoner" />
 
   </form>
-
 
 </main>
 

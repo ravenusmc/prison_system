@@ -55,6 +55,21 @@
       $statement->closeCursor();
   }
 
+  //This function adds an address to the database
+  function add_prisoner($criminal_id, $street, $town, $state, $zip) {
+    global $db;
+    $query = 'INSERT INTO address
+                  (criminal_id, street, town, state, zip)
+                VALUES
+                  (:criminal_id, :street, :town, :state, :zip)';
+      $statement = $db->prepare($query);
+      $statement->bindValue(':first_name', $first_name);
+      $statement->bindValue(':last_name', $last_name);
+      $statement->bindValue(':phone', $phone);
+      $statement->execute();
+      $statement->closeCursor();
+  }
+
   //This function deletes a prisoner from the db
   function delete_prisoner($criminal_id){
     global $db;

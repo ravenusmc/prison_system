@@ -38,12 +38,30 @@ switch ($action) {
         include('prisoner_info.php');
         break;
     case 'add_address':
-    
+
+        //Getting the user input
+        $first_name = filter_input(INPUT_POST, 'first_name');
+        $last_name = filter_input(INPUT_POST, 'last_name');
+        $phone = filter_input(INPUT_POST, 'phone');
+
+        add_prisoner($first_name, $last_name, $phone);
+
+        include('add_address.php');
+        break;
+    //This method will allow the user to add a crime to the database
+    case 'add_crime':
+        //Getting the user input
+        $street  = filter_input(INPUT_POST, 'street');
+        $town = filter_input(INPUT_POST, 'town');
+        $state = filter_input(INPUT_POST, 'state');
+        $zip = filter_input(INPUT_POST, 'zip');
+
         //Getting the prisoner id to add into the address form. 
         $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
             FILTER_VALIDATE_INT);
 
-        include('add_address.php');
+
+        include('add_crime.php');
         break;
     //This case will show the address of the prisoner
     case 'address_list':
@@ -60,18 +78,6 @@ switch ($action) {
     //This case will take the user to the add prisoner form
     case 'add_prisoner_form':
         include('add_prisoner.php');
-        break;
-    //This case will add a prisoner to the DB. 
-    case 'add_prisoner':
-
-        //Getting the user input
-        $first_name = filter_input(INPUT_POST, 'first_name');
-        $last_name = filter_input(INPUT_POST, 'last_name');
-        $phone = filter_input(INPUT_POST, 'phone');
-
-        add_prisoner($first_name, $last_name, $phone);
-
-        header('Location: .?action=list_criminals');
         break;
     //This case will delete a prisoner 
     case 'delete_criminal':
