@@ -82,6 +82,19 @@ switch ($action) {
             FILTER_VALIDATE_INT);
         include('add_officer.php');
         break;
+    //This action will submit the officer information to the database. 
+    case 'add_officer':
+    
+        //Getting the user input
+        $f_name  = filter_input(INPUT_POST, 'f_name');
+        $l_name = filter_input(INPUT_POST, 'l_name');
+        $badge = filter_input(INPUT_POST, 'badge');
+
+        //Adding the officer to the database
+        add_officer($f_name, $l_name, $badge);
+
+        header('Location: .?action=list_criminals');
+        break;
     //This method will allow the user to add a crime to the database
     case 'add_crime_form':
         $criminal_id = filter_input(INPUT_POST, 'criminal_id', 

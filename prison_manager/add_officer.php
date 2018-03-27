@@ -10,7 +10,7 @@
     <input type="hidden" name="action" value="add_officer" />
     <!-- The below inputs will deal with getting information for the prisoner -->
     <input placeholder='First Name' type='text' name='f_name'>&nbsp;
-    <input placeholder='Last Name' type='text' name='last_name'>&nbsp;
+    <input placeholder='Last Name' type='text' name='l_name'>&nbsp;
     <input placeholder='Badge Number' type='text' name='badge'>&nbsp;&nbsp;&nbsp;
     <input type="hidden" name="criminal_id" value="<?php echo $criminal_id; ?>">
     <input type="submit" value="Submit" />

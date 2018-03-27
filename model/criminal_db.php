@@ -73,6 +73,21 @@
       $statement->closeCursor();
   }
 
+  //This function will add an officer to the database
+  function add_officer($f_name, $l_name, $badge) {
+    global $db;
+    $query = 'INSERT INTO officers
+                  (last, first, badge_number)
+                VALUES
+                  (:last, :first, :badge_number)';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':last', $l_name);
+    $statement->bindValue(':first', $f_name);
+    $statement->bindValue(':badge_number', $badge);
+    $statement->execute();
+    $statement->closeCursor();
+  }
+
   //This function deletes a prisoner from the db
   function delete_prisoner($criminal_id){
     global $db;
