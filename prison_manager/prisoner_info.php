@@ -24,26 +24,30 @@
     </div>
 
     <div>
-      <h4>Street: <?php   ?></h4>
-      <h4>Town: <?php   ?></h4>
-      <h4>State: <?php   ?></h4>
-      <h4>Zip: <?php   ?></h4>
-      <h4>Phone Number: <?php   ?></h4>
+      <h3>Police Officer Information </h3>
+      <h4>First Name: <?php   ?></h4>
+      <h4>Last Name: <?php  ?></h4>
+      <h4>Badge Number: <?php   ?></h4>
+      <form action="index.php" method="post">
+        <input type="hidden" name="action" value="add_officer_form">
+        <input type="hidden" name="criminal_id" value="<?php echo $prisoner_info[0]; ?>">
+        <input class='input_style' type="submit" value="Add Officer">
+      </form>
+    </div>
+
+    <div>
+
+      <h4>Crime Committed: <?php   ?></h4>
+
       <form action="index.php" method="post">
         <input type="hidden" name="action" value="add_crime_form">
         <input type="hidden" name="criminal_id" value="<?php echo $prisoner_info[0]; ?>">
         <input class='input_style' type="submit" value="Add Crime">
       </form>
+
     </div>
 
-    <div>
-      <h4>Street: <?php   ?></h4>
-      <h4>Town: <?php  ?></h4>
-      <h4>State: <?php   ?></h4>
-      <h4>Zip: <?php   ?></h4>
-      <h4>Phone Number: <?php   ?></h4>
-      <button>Add Police Officer Information</button>
-    </div>
+
 
   </section>
 

@@ -76,6 +76,12 @@ switch ($action) {
 
         header('Location: .?action=list_criminals');
         break;
+    //This action will take the user to the add_officer_form
+    case 'add_officer_form':
+        $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
+            FILTER_VALIDATE_INT);
+        include('add_officer.php');
+        break;
     //This method will allow the user to add a crime to the database
     case 'add_crime_form':
         $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
