@@ -3,16 +3,15 @@
 
 <main>
 
-  <h2>Please Fill Out Form to Add Prisoner</h2>
+  <h2>Please Fill Out Form to Add a Crime</h2>
 
   <form action="index.php" method="post">
     <?php echo $criminal_id; ?>
     <input type="hidden" name="action" value="add_crime" />
 
-    <!-- The below inputs will deal with getting information for the prisoner -->
-    <input placeholder='' type='text' name='first_name'>&nbsp;
-    <input placeholder='Last Name' type='text' name='last_name'>&nbsp;
-    <input placeholder='Phone Number' type='text' name='phone'>&nbsp;&nbsp;&nbsp;
+    <!-- The below inputs will deal with getting information for the crime -->
+    <input placeholder='Crime' type='text' name='crime'>&nbsp;
+    <input type="hidden" name="criminal_id" value="<?php echo $prisoner_info[0]; ?>">
 
 
     <label>&nbsp;</label>
