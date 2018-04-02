@@ -78,8 +78,8 @@ switch ($action) {
         break;
     //This action will take the user to the add_officer_form
     case 'add_officer_form':
-        $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
-            FILTER_VALIDATE_INT);
+        // $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
+        //     FILTER_VALIDATE_INT);
         include('add_officer.php');
         break;
     //This action will submit the officer information to the database. 
@@ -97,9 +97,14 @@ switch ($action) {
         break;
     //This method will allow the user to add a crime to the database
     case 'add_crime_form':
-        $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
-            FILTER_VALIDATE_INT);
+        $officers = get_all_officers();
         include('add_crime.php');
+        break;
+    case 'add_crime':
+
+
+
+        header('Location: .?action=list_criminals');
         break;
     //This case will show the address of the prisoner
     case 'address_list':

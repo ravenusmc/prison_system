@@ -11,7 +11,18 @@
 
     <!-- The below inputs will deal with getting information for the crime -->
     <input placeholder='Crime' type='text' name='crime'>&nbsp;
-    <input type="hidden" name="criminal_id" value="<?php echo $prisoner_info[0]; ?>">
+
+    <label>Select Arresting Officer:</label>
+    <select name="officers">
+      <?php foreach ($officers as $officer) : ?>
+      <option value='<?php echo $officer['officer_id'] ?>'> 
+        <?php echo $officer['first']; ?> <?php echo $officer['last']; ?></option>
+      <?php endforeach; ?>
+    </select><br>
+    
+    <select name="prisoners">
+      
+    </select>
 
 
     <label>&nbsp;</label>

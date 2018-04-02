@@ -48,6 +48,8 @@
 
 
   <a href="?action=add_prisoner_form">Add Prisoner</a>
+  <a href="?action=add_officer_form">Add Police Officer</a>
+  <a href="?action=add_crime_form">Add Crime</a>
 
 </main>
 

@@ -88,6 +88,18 @@
     $statement->closeCursor();
   }
 
+  //This function will get all officers from the database
+  function get_all_officers(){
+    global $db;
+    $query = 'SELECT * FROM officers
+            ORDER BY officer_id';
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $officers = $statement->fetchAll();
+    $statement->closeCursor();
+    return $officers; 
+  }
+
   //This function deletes a prisoner from the db
   function delete_prisoner($criminal_id){
     global $db;
