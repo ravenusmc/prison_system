@@ -19,9 +19,15 @@
         <?php echo $officer['first']; ?> <?php echo $officer['last']; ?></option>
       <?php endforeach; ?>
     </select><br>
-    
+
+    <label>Select Prisoner:</label>
     <select name="prisoners">
-      
+
+      <?php foreach ($criminals as $criminal) : ?>
+      <option value='<?php echo $criminal['criminal_id'] ?>'>
+        <?php echo $criminal['first_name']; ?> <?php echo $criminal['last_name']; ?></option>
+      <?php endforeach; ?>
+
     </select>
 
 

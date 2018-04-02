@@ -97,12 +97,23 @@ switch ($action) {
         break;
     //This method will allow the user to add a crime to the database
     case 'add_crime_form':
+        //Getting a list of all police officers from DB 
         $officers = get_all_officers();
+
+        //Getting a list of all prisoners from DB 
+        $criminals = get_all_criminals();
+
         include('add_crime.php');
         break;
     case 'add_crime':
 
+        //Getting the data from the user input
+        $crime  = filter_input(INPUT_POST, 'crime');
+        $officer_id = filter_input(INPUT_POST, 'officers');
+        $criminal_id = filter_input(INPUT_POST, 'prisoners');
 
+        //Add the information to the crimes database
+        add_crime($crime, $officer_id, $criminal_id);
 
         header('Location: .?action=list_criminals');
         break;

@@ -88,6 +88,22 @@
     $statement->closeCursor();
   }
 
+  //This function will add a crim to the database
+    //This function adds a prisoner to the database
+  function add_crime($crime, $officer_id, $criminal_id) {
+    global $db;
+    $query = 'INSERT INTO crimes
+                  (criminal_id, crime_committed, officer_id)
+                VALUES
+                  (:criminal_id, :crime_committed, :officer_id)';
+      $statement = $db->prepare($query);
+      $statement->bindValue(':criminal_id', $criminal_id);
+      $statement->bindValue(':crime_committed', $crime);
+      $statement->bindValue(':officer_id', $officer_id);
+      $statement->execute();
+      $statement->closeCursor();
+  }
+
   //This function will get all officers from the database
   function get_all_officers(){
     global $db;
