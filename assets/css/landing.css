@@ -2,6 +2,12 @@
 CSS in this file will be for the landing page
 *********************************/
 
-main {
+
+.landing_main {
   margin-top: 100px;
+  min-height: 574px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
