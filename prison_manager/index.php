@@ -71,6 +71,9 @@ switch ($action) {
         break;
     case 'add_address':
 
+        //The issue with this is that I need to have the a prisoner that the 
+        //user can select from.
+
         //Getting the prisoner id to add into the address form. 
         $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
             FILTER_VALIDATE_INT);
@@ -81,7 +84,8 @@ switch ($action) {
         $state = filter_input(INPUT_POST, 'state');
         $zip = filter_input(INPUT_POST, 'zip');
 
-        add_address($criminal_id, $street, $town, $state, $zip);
+
+        //add_address($criminal_id, $street, $town, $state, $zip);
 
         header('Location: .?action=list_criminals');
         break;

@@ -65,8 +65,13 @@
     $officer_info = $statement->fetch();
     $statement->closeCursor();
     return $officer_info;
-
   }
+
+  // SELECT title, avg(rating) as Average_rating FROM series
+  //   JOIN reviews
+  //   ON series.id = reviews.series_id
+  //   GROUP BY title 
+  //   ORDER BY Average_rating ASC;
 
   //This function adds a prisoner to the database
   function add_prisoner($first_name, $last_name, $phone) {
