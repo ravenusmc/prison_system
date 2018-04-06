@@ -41,6 +41,21 @@
     return $sole_prisoner; 
   }
 
+  //This function will get the info on an sole criminal 
+  function get_sole_prisoner_crime_info($criminal_id) {
+    global $db;
+    $query = 'SELECT * FROM crimes
+        WHERE criminal_id = :criminal_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':criminal_id', $criminal_id);
+    $statement->execute();
+    $crime_info = $statement->fetch();
+    $statement->closeCursor();
+    return $crime_info;
+  }
+
+  
+
   //This function adds a prisoner to the database
   function add_prisoner($first_name, $last_name, $phone) {
     global $db;

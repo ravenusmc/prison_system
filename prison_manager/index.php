@@ -35,6 +35,12 @@ switch ($action) {
         //Getting address information about prisoner 
         $prisoner_address = get_address($criminal_id);
 
+        //Getting Crime information 
+        $crime_info = get_sole_prisoner_crime_info($criminal_id);
+
+        //Getting arresting officer information
+        $officer_info = get
+
 
         include('prisoner_info.php');
         break;

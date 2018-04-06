@@ -6,8 +6,10 @@
 
 <!-- main part of the page -->
 <main class='landing_main'>
-    <h1 class='center'><a href="prison_manager">Prison System</a></h1>
-    <p class='center'>Click Above to Enter</p>
+  <div>
+    <h1><a href="prison_manager">Prison System</a></h1>
+    <p>Click Above to Enter</p>
+  </div>
 </main>
 
 <hr>

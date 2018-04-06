@@ -6,7 +6,7 @@
 
   <header>
     <h1>Prisoner <?php echo $prisoner_info[2] . ' ' . $prisoner_info[1];  ?> </h1>
-    <?php echo  $prisoner_info[0]; ?>
+    <button><a href="?action=list_criminals">Criminal List</a></button>
   </header>
 
   <section id='prisoner_info'>
@@ -28,30 +28,15 @@
       <h4>First Name: <?php   ?></h4>
       <h4>Last Name: <?php  ?></h4>
       <h4>Badge Number: <?php   ?></h4>
-      <form action="index.php" method="post">
-        <input type="hidden" name="action" value="add_officer_form">
-        <input type="hidden" name="criminal_id" value="<?php echo $prisoner_info[0]; ?>">
-        <input class='input_style' type="submit" value="Add Officer">
-      </form>
     </div>
 
     <div>
 
-      <h4>Crime Committed: <?php   ?></h4>
-
-      <form action="index.php" method="post">
-        <input type="hidden" name="action" value="add_crime_form">
-        <input type="hidden" name="criminal_id" value="<?php echo $prisoner_info[0]; ?>">
-        <input class='input_style' type="submit" value="Add Crime">
-      </form>
+      <h4>Crime Committed: <?php echo $crime_info[2]; ?></h4>
 
     </div>
 
-
-
   </section>
-
-  <button><a href="?action=list_criminals">Criminal List</a></button>
 
 </main>
 
