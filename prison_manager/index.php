@@ -38,8 +38,11 @@ switch ($action) {
         //Getting Crime information 
         $crime_info = get_sole_prisoner_crime_info($criminal_id);
 
+        //Getting the id of the officer to use in the next line 
+        $officer_id = $crime_info[3];
+
         //Getting arresting officer information
-        $officer_info = get
+        $officer_info = get_arresting_officer_info($officer_id);
 
 
         include('prisoner_info.php');

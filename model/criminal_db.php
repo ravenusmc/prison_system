@@ -54,7 +54,19 @@
     return $crime_info;
   }
 
-  
+  //This function will get the arresting officer information for the criminal
+  function get_arresting_officer_info($officer_id) {
+    global $db;
+    $query = 'SELECT * FROM officers
+        WHERE officer_id = :officer_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':officer_id', $officer_id);
+    $statement->execute();
+    $officer_info = $statement->fetch();
+    $statement->closeCursor();
+    return $officer_info;
+
+  }
 
   //This function adds a prisoner to the database
   function add_prisoner($first_name, $last_name, $phone) {
