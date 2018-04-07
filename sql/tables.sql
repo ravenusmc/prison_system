@@ -47,3 +47,50 @@ VALUES (1, '42 Boardwalk Blvd', 'Atlantic City', 'NJ', 00001);
 
 drop table address;
 drop table criminals;
+
+
+--Query to get all information about specific individual. 
+SELECT cr.last_name, cr.first_name, cr.phone, a.street, a.town, a.state, a.zip,
+ce.crime_committed, o.last, o.first, o.badge_number
+FROM criminals cr
+JOIN address a on a.criminal_id = cr.criminal_id
+JOIN crimes ce on ce.criminal_id = cr.criminal_id
+JOIN officers o on ce.officer_id = o.officer_id
+WHERE cr.criminal_id = 37;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

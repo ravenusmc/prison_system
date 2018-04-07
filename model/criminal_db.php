@@ -67,11 +67,23 @@
     return $officer_info;
   }
 
-  // SELECT title, avg(rating) as Average_rating FROM series
-  //   JOIN reviews
-  //   ON series.id = reviews.series_id
-  //   GROUP BY title 
-  //   ORDER BY Average_rating ASC;
+  //This function will get all the prisoner information in all the tables 
+  function get_all_prisoner_information($criminal_id) {
+    global $db;
+    $query = 'SELECT cr.last_name, cr.first_name, cr.phone, a.street, a.town, 
+    a.state, a.zip, ce.crime_committed, o.last, o.first, o.badge_number
+    FROM criminals cr
+    JOIN address a on a.criminal_id = cr.criminal_id
+    JOIN crimes ce on ce.criminal_id = cr.criminal_id
+    JOIN officers o on ce.officer_id = o.officer_id
+    WHERE cr.criminal_id = :criminal_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':criminal_id', $criminal_id);
+    $statement->execute();
+    $all_information = $statement->fetch();
+    $statement->closeCursor();
+    return $all_information;
+  }
 
   //This function adds a prisoner to the database
   function add_prisoner($first_name, $last_name, $phone) {

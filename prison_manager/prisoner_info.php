@@ -16,8 +16,8 @@
   <section id='prisoner_info'>
     <div>
       <h2>Personal Information:</h2>
-      <h4>Street: <?php echo $prisoner_address[2];  ?></h4>
-      <h4>Town: <?php echo $prisoner_address[3];  ?></h4>
+      <h4>Street: <?php echo $all_information['street'];  ?></h4>
+      <h4>Town: <?php echo $all_information['town'];  ?></h4>
       <h4>State: <?php echo $prisoner_address[4];  ?></h4>
       <h4>Zip: <?php echo $prisoner_address[5];  ?></h4>
       <h4>Phone Number: <?php echo $prisoner_info[3];  ?></h4>
