@@ -14,7 +14,13 @@
     <input placeholder='Town' type='text' name='town'>&nbsp;
     <input placeholder='State' type='text' name='state'>&nbsp;&nbsp;&nbsp;
     <input placeholder='Zip' type='text' name='zip'>&nbsp;&nbsp;&nbsp;
-    <input type="hidden" name="criminal_id" value="<?php echo $criminal_id; ?>">
+    <label>Please Select Prisoner Address Belongs to:</label>
+    <select name="prisoner">
+      <?php foreach ($criminals as $criminal) : ?>
+      <option value='<?php echo $criminal['criminal_id'] ?>'> 
+        <?php echo $criminal['first_name']; ?> <?php echo $criminal['last_name']; ?></option>
+      <?php endforeach; ?>
+    </select><br>
     <input type="submit" value="Submit Address" />
 
   </form>
