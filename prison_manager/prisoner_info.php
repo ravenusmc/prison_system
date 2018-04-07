@@ -11,7 +11,6 @@
     </div>
   </header>
 
-
 <main>
 
   <section id='prisoner_info'>

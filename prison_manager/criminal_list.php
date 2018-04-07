@@ -46,12 +46,6 @@
   </table>
   <!-- End table -->
 
-
-  <a href="?action=add_prisoner_form">Add Prisoner</a>
-  <a href="?action=add_address_form">Add Address</a>
-  <a href="?action=add_officer_form">Add Police Officer</a>
-  <a href="?action=add_crime_form">Add Crime</a>
-
 </main>
 
 <?php include '../view/footer.php'; ?>
