@@ -95,9 +95,9 @@
     $statement = $db->prepare($query);
     $statement->bindValue(':crime', $crime);
     $statement->execute();
-    $criminals = $statement->fetch();
+    $prisoners = $statement->fetchAll();
     $statement->closeCursor();
-    return $criminals;
+    return $prisoners;
   }
 
   //This function adds a prisoner to the database

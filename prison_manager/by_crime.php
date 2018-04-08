@@ -3,13 +3,9 @@
 
 <h1>See Crimes</h1>
 
-<?php echo $criminals['last_name']; ?>
-<?php echo $criminals['first_name']; ?>
+<?php foreach ($prisoners as $prisoner) : ?>
 
-<?php foreach ($criminals as $criminal) : ?>
-
-  <?php echo $criminals['last_name'] . '<br>'; ?>
-  <?php echo $criminals['first_name'] . '<br>'; ?>
+  <?php echo $prisoner['last_name'] . ' ' . $prisoner['first_name'] . '<br>'; ?>
 
 <?php endforeach; ?>
 

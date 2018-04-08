@@ -136,7 +136,7 @@ switch ($action) {
         $crime = filter_input(INPUT_POST, 'crimes');
 
         //Getting the criminals who committed those crimes 
-        $criminals = get_criminals_by_crimes($crime);
+        $prisoners = get_criminals_by_crimes($crime);
 
         include('by_crime.php');
         break;
