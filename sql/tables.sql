@@ -58,6 +58,11 @@ JOIN crimes ce on ce.criminal_id = cr.criminal_id
 JOIN officers o on ce.officer_id = o.officer_id
 WHERE cr.criminal_id = 37;
 
+--This query will get information for which criminals have committed which crimes
+SELECT c.criminal_id, c.crime_committed, cl.last_name, cl.first_name
+FROM crimes c
+JOIN criminals cl on cl.criminal_id = c.criminal_id
+WHERE c.crime_committed = 'robbery';
 
 
 

@@ -13,20 +13,20 @@
 <main>
 
   <section id='prisoner_info'>
-    <div>
-      <h2>Personal Information:</h2>
+    <div class='prisoner_info_div'>
+      <h2 class='prisoner_title'>Personal Information:</h2>
       <h4>Street: <?php echo $all_information['street'];  ?></h4>
       <h4>Town: <?php echo $all_information['town'];  ?></h4>
       <h4>State: <?php echo $all_information['state'];  ?></h4>
       <h4>Zip: <?php echo $all_information['zip'];  ?></h4>
       <h4>Phone Number: <?php echo $all_information['phone'];  ?></h4>
       <br>
-      <h2>Arresting Officer Information:</h2>
+      <h2 class='prisoner_title'>Arresting Officer Information:</h2>
       <h4>First Name: <?php echo $all_information['first'];  ?></h4>
       <h4>Last Name: <?php echo $all_information['last'];  ?></h4>
       <h4>Badge Number: <?php echo $all_information['badge_number'];   ?></h4>
       <br>
-      <h2>Crime Information:</h2>
+      <h2 class='prisoner_title'>Crime Information:</h2>
       <h4>Crime Committed: <?php echo $all_information['crime_committed']; ?></h4>
     </div>
   </section>

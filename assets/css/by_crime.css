@@ -1,0 +1,14 @@
+/********************************
+CSS in this file will be used on the by_crime page.
+*********************************/
+
+#by_crime_main {
+  margin-top: 100px;
+}
+
+.by_crime_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

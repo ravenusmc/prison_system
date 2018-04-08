@@ -121,6 +121,19 @@ switch ($action) {
         //Sending the user to the correct page
         include('address.php');
         break;
+    //This line will take the user to the page that they can see a prisoner by crime 
+    case 'by_crime_form':
+
+        //Getting the crimes from the database 
+        $crimes = get_crimes();
+
+        //Sending the user to the correct page
+        include('by_crime_form.php');
+        break;
+    case 'see_prisoner_by_crime':
+
+        include('by_crime.php');
+        break;
     //This case will delete a prisoner 
     case 'delete_criminal':
 

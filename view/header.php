@@ -31,10 +31,12 @@
           <a class="dropdown-item" href="?action=add_crime_form">Add Crime</a>
         </div>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="?action=by_crime_form">By Crime</a>
+      </li>
     </ul>
   </div>
 </nav>
-
 
 <!-- the body section -->
 <body>

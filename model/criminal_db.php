@@ -160,6 +160,18 @@
     return $officers; 
   }
 
+  //This function will allow the user to see which crimes they can select 
+  function get_crimes() {
+    global $db;
+    $query = 'SELECT * FROM crimes';
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $crimes = $statement->fetchAll();
+    $statement->closeCursor();
+    return $crimes; 
+  }
+
+
   //This function deletes a prisoner from the db
   function delete_prisoner($criminal_id){
     global $db;
