@@ -29,26 +29,8 @@ switch ($action) {
         $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
             FILTER_VALIDATE_INT);
 
+        //This line will get all the data about the prisoner that is on all the tables
         $all_information = get_all_prisoner_information($criminal_id);
-
-
-        //LONG CODE 
-        // //Getting information on sole prisoner 
-        // $prisoner_info = get_sole_prisoner($criminal_id);
-
-        // //Getting address information about prisoner 
-        // $prisoner_address = get_address($criminal_id);
-
-        // //Getting Crime information 
-        // $crime_info = get_sole_prisoner_crime_info($criminal_id);
-
-        // //Getting the id of the officer to use in the next line 
-        // $officer_id = $crime_info[3];
-
-        // //Getting arresting officer information
-        // $officer_info = get_arresting_officer_info($officer_id);
-        //END LONG CODE 
-
 
         include('prisoner_info.php');
         break;
