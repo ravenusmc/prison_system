@@ -85,6 +85,21 @@
     return $all_information;
   }
 
+  //This function will get all criminals by crime 
+  function get_criminals_by_crimes($crime) {
+    global $db;
+    $query = 'SELECT c.criminal_id, c.crime_committed, cl.last_name, cl.first_name
+              FROM crimes c
+              JOIN criminals cl on cl.criminal_id = c.criminal_id
+              WHERE c.crime_committed = :crime';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':crime', $crime);
+    $statement->execute();
+    $criminals = $statement->fetch();
+    $statement->closeCursor();
+    return $criminals;
+  }
+
   //This function adds a prisoner to the database
   function add_prisoner($first_name, $last_name, $phone) {
     global $db;
@@ -163,7 +178,7 @@
   //This function will allow the user to see which crimes they can select 
   function get_crimes() {
     global $db;
-    $query = 'SELECT * FROM crimes';
+    $query = 'SELECT DISTINCT crime_committed FROM crimes';
     $statement = $db->prepare($query);
     $statement->execute();
     $crimes = $statement->fetchAll();

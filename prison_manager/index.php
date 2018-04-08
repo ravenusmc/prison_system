@@ -110,17 +110,17 @@ switch ($action) {
         header('Location: .?action=list_criminals');
         break;
     //This case will show the address of the prisoner
-    case 'address_list':
-        //Getting the input from what the user selects
-        $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
-            FILTER_VALIDATE_INT);
-        //Getting the address info from the database
-        $address = get_address($criminal_id);
-        //Getting the prisoner info from the database
-        $sole_prisoner = get_sole_prisoner($criminal_id);
-        //Sending the user to the correct page
-        include('address.php');
-        break;
+    // case 'address_list':
+    //     //Getting the input from what the user selects
+    //     $criminal_id = filter_input(INPUT_POST, 'criminal_id', 
+    //         FILTER_VALIDATE_INT);
+    //     //Getting the address info from the database
+    //     $address = get_address($criminal_id);
+    //     //Getting the prisoner info from the database
+    //     $sole_prisoner = get_sole_prisoner($criminal_id);
+    //     //Sending the user to the correct page
+    //     include('address.php');
+    //     break;
     //This line will take the user to the page that they can see a prisoner by crime 
     case 'by_crime_form':
 
@@ -131,6 +131,12 @@ switch ($action) {
         include('by_crime_form.php');
         break;
     case 'see_prisoner_by_crime':
+
+        //Getting the user input
+        $crime = filter_input(INPUT_POST, 'crimes');
+
+        //Getting the criminals who committed those crimes 
+        $criminals = get_criminals_by_crimes($crime);
 
         include('by_crime.php');
         break;

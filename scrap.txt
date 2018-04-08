@@ -1,9 +1,2 @@
-May have to add crime and officer on the same page.
-
-I would then first add the officer into the database, get the ID and use it to add 
-into the crimes database?
-
-Or 
-
-Simply take the officer id as a hidden field and then use that in the crimes table! 
+I need to get Distinct values from the 
 

@@ -11,7 +11,7 @@
 
       <input type="hidden" name="action" value="see_prisoner_by_crime" />
 
-      <select name="crime">
+      <select name="crimes">
         <?php foreach ($crimes as $crime) : ?>
           <option value='<?php echo $crime['crime_committed']; ?>'> 
             <?php echo $crime['crime_committed']; ?>
