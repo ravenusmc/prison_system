@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="../assets/css/by_crime.css">
 
 
-<main id='by_crime_main'>
+<main id='by_crime_form_main'>
 
   <section>
     <h1 class='center'>Please Select Crime:</h1>
@@ -19,7 +19,7 @@
         <?php endforeach; ?>
       </select><br>
 
-    <input type="submit" value="See Criminals" />
+    <input class='crime_form_button' type="submit" value="See Criminals" />
     </form>
 
   </section>

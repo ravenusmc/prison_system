@@ -1,13 +1,19 @@
 <?php include '../view/header.php'; ?>
 <link rel="stylesheet" type="text/css" href="../assets/css/by_crime.css">
 
-<h1>See Crimes</h1>
+<main class='by_crime_main'>
 
-<?php foreach ($prisoners as $prisoner) : ?>
+  <h1>Criminals Who Committed: <?php echo $crime; ?></h1>
 
-  <?php echo $prisoner['last_name'] . ' ' . $prisoner['first_name'] . '<br>'; ?>
+  <ol>
+  <?php foreach ($prisoners as $prisoner) : ?>
 
-<?php endforeach; ?>
+    <li class='by_crime_li'><?php echo $prisoner['first_name'] . ' ' . $prisoner['last_name'] . '<br>'; ?></li>
+
+  <?php endforeach; ?>
+  </ol>
+
+</main>
 
 
 <?php include '../view/footer.php'; ?>
