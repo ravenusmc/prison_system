@@ -64,6 +64,13 @@ FROM crimes c
 JOIN criminals cl on cl.criminal_id = c.criminal_id
 WHERE c.crime_committed = 'robbery';
 
+--This query will get information based on arresting officer. 
+SELECT DISTINCT cl.first_name, cl.last_name
+FROM officers o
+JOIN crimes c on c.officer_id = o.officer_id
+JOIN criminals cl on cl.criminal_id = c.criminal_id
+WHERE o.officer_id = 3;
+
 
 
 

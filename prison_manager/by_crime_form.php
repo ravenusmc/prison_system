@@ -27,6 +27,4 @@
 
 </main>
 
-
-
 <?php include '../view/footer.php'; ?>

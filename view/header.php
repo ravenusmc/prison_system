@@ -34,6 +34,9 @@
       <li class="nav-item">
         <a class="nav-link" href="?action=by_crime_form">By Crime</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="?action=by_officer_form">By Officer</a>
+      </li>
     </ul>
   </div>
 </nav>

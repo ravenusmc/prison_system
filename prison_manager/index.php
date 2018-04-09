@@ -130,6 +130,8 @@ switch ($action) {
         //Sending the user to the correct page
         include('by_crime_form.php');
         break;
+    //This action will take the user to the page to see what criminals committed 
+    //What crime 
     case 'see_prisoner_by_crime':
 
         //Getting the user input
@@ -139,6 +141,27 @@ switch ($action) {
         $prisoners = get_criminals_by_crimes($crime);
 
         include('by_crime.php');
+        break;
+    //This action will take the user to the page to select which officers arrested which 
+    //criminals
+    case 'by_officer_form':
+
+        //Getting the officer data from the database. 
+        $officers = get_all_officers();
+
+        //Taking the user to the correct page. 
+        include('by_officer_form.php');
+        break;
+    case 'see_officers':
+
+        //Getting the user input
+        $officer_id = filter_input(INPUT_POST, 'officers');
+
+        //Getting the prisoner names from the database 
+        $criminals = get_criminals_by_officers($officer_id);
+
+        //Taking the user to the correct page. 
+        include('see_officers.php');
         break;
     //This case will delete a prisoner 
     case 'delete_criminal':

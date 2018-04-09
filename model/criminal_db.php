@@ -100,6 +100,24 @@
     return $prisoners;
   }
 
+  //This function gets all the criminals who each officer arrested
+  function get_criminals_by_officers($officer_id) {
+    global $db;
+    
+    $query = 'SELECT DISTINCT cl.first_name, cl.last_name
+              FROM officers o
+              JOIN crimes c on c.officer_id = o.officer_id
+              JOIN criminals cl on cl.criminal_id = c.criminal_id
+              WHERE o.officer_id = :officer_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':officer_id', $officer_id);
+    $statement->execute();
+    $criminals = $statement->fetchAll();
+    $statement->closeCursor();
+
+    return $criminals;
+  }
+
   //This function adds a prisoner to the database
   function add_prisoner($first_name, $last_name, $phone) {
     global $db;
