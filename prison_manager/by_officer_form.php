@@ -17,11 +17,10 @@
         <?php endforeach; ?>
       </select>
 
-      <br>
+      <p></p>
 
     <input class='crime_form_button' type="submit" value="See Officers" />
   </form>
-
 
 </main>
 

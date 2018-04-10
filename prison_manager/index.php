@@ -163,6 +163,15 @@ switch ($action) {
         //Taking the user to the correct page. 
         include('see_officers.php');
         break;
+    //This action will take the user to the update prisoners page
+    case 'update_prisoner_form':
+
+        //Getting all criminals from the DB
+        $prisoners = get_all_criminals();
+
+        //Taking the user to the correct page.
+        include('update_prisoner_form.php');
+        break;
     //This case will delete a prisoner 
     case 'delete_criminal':
 
