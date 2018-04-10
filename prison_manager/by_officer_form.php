@@ -15,8 +15,9 @@
             <?php echo $officer['first'] . ' ' . $officer['last']; ?><br>
           </option>
         <?php endforeach; ?>
-      </select><br>
+      </select>
 
+      <br>
 
     <input class='crime_form_button' type="submit" value="See Officers" />
   </form>
