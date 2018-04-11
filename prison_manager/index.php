@@ -172,6 +172,19 @@ switch ($action) {
         //Taking the user to the correct page.
         include('update_prisoner_form.php');
         break;
+    //This action will take the user to the update prisoners page, once the 
+    //the prisoner has been selected. 
+    case 'Update_prisoner':
+
+        //Getting the criminal id from the user input
+        $criminal_id = filter_input(INPUT_POST, 'prisoners');
+
+        //Getting the data from the database
+        $sole_prisoner = get_sole_prisoner($criminal_id);
+
+
+        include('update_prisoner.php');
+        break;
     //This case will delete a prisoner 
     case 'delete_criminal':
 
