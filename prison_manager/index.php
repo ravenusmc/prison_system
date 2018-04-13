@@ -187,9 +187,17 @@ switch ($action) {
         break;
     //This action will update the database based on what the user submitted. 
     case 'update_prisoner_submit':
-    
+
         //Getting the user input
-        $criminal_id = filter_input(INPUT_POST, 'prisoners');
+        $first_name = filter_input(INPUT_POST, 'first_name');
+        $last_name = filter_input(INPUT_POST, 'last_name');
+        $phone = filter_input(INPUT_POST, 'phone');
+        $criminal_id = filter_input(INPUT_POST, 'criminal_id');
+
+        
+
+        //Making he updates to the database. 
+        update_prisoner($first_name, $last_name, $phone, $criminal_id);
 
         header('Location: .?action=list_criminals');
         break;

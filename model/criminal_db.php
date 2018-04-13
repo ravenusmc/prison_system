@@ -118,6 +118,25 @@
     return $criminals;
   }
 
+  //This function updates the criminal information. 
+  function update_prisoner($first_name, $last_name, $phone, $criminal_id){
+    global $db;
+
+    $query = 'UPDATE criminals 
+    SET last_name = :last_name,
+        first_name = :first_name,
+        phone = :phone
+    WHERE criminal_id = :criminal_id';
+
+    $statement = $db->prepare($query);
+    $statement->bindValue(':last_name', $last_name);
+    $statement->bindValue(':first_name', $first_name);
+    $statement->bindValue(':phone', $phone);
+    $statement->bindValue(':criminal_id', $criminal_id);
+    $statement->execute();
+    $statement->closeCursor();
+  }
+
   //This function adds a prisoner to the database
   function add_prisoner($first_name, $last_name, $phone) {
     global $db;
