@@ -194,7 +194,21 @@ switch ($action) {
         $phone = filter_input(INPUT_POST, 'phone');
         $criminal_id = filter_input(INPUT_POST, 'criminal_id');
 
-        
+        //Use if statements to set the values of firstname, last name and phone
+        if (empty($first_name)) {
+           $prisoner = get_sole_prisoner($criminal_id);
+           $first_name = $prisoner['first_name'];
+        }
+
+        if (empty($last_name)) {
+            $prisoner = get_sole_prisoner($criminal_id);
+            $last_name = $prisoner['last_name'];
+        }
+
+        if (empty($phone)) {
+            $prisoner = get_sole_prisoner($criminal_id);
+            $last_name = $prisoner['phone'];
+        }
 
         //Making he updates to the database. 
         update_prisoner($first_name, $last_name, $phone, $criminal_id);
