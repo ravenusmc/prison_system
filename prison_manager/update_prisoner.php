@@ -1,15 +1,27 @@
 <?php include '../view/header.php'; ?>
 <link rel="stylesheet" type="text/css" href="../assets/css/update.css">
 
-<h1>Update page</h1>
+<main class='update_prisoner_main'>
 
-<form action="index.php" method="post">
+  <div>
+    <h1>Update page</h1>
 
-  <label>First Name: </label><input placeholder='<?php echo $sole_prisoner['first_name'] ?>'><br>
-  <label>Last Name: </label><input placeholder='<?php echo $sole_prisoner['last_name'] ?>'><br>
-  <label>Phone Number: </label><input placeholder='<?php echo $sole_prisoner['phone'] ?>'>
+    <form action="index.php" method="post">
 
-</form>
+      <input type="hidden" name="action" value="update_prisoner_submit" />
+
+      <label>First Name: </label><input name='first_name' placeholder='<?php echo $sole_prisoner['first_name'] ?>'><br>
+      <label>Last Name: </label><input name='last_name' placeholder='<?php echo $sole_prisoner['last_name'] ?>'><br>
+      <label>Phone Number: </label><input name='phone' placeholder='<?php echo $sole_prisoner['phone'] ?>'><br>
+
+      <div class='button_fix'>
+        <input type='submit' value="Submit Changes" />
+      <div>
+
+    </form>
+  </div>
+
+</main>
 
 
 <?php include '../view/footer.php'; ?>

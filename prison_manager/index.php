@@ -185,6 +185,14 @@ switch ($action) {
 
         include('update_prisoner.php');
         break;
+    //This action will update the database based on what the user submitted. 
+    case 'update_prisoner_submit':
+    
+        //Getting the user input
+        $criminal_id = filter_input(INPUT_POST, 'prisoners');
+
+        header('Location: .?action=list_criminals');
+        break;
     //This case will delete a prisoner 
     case 'delete_criminal':
 
