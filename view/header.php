@@ -37,7 +37,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="?action=update_prisoner_form">Update Prisoner</a>
-          <a class="dropdown-item" href="?action=add_address_form">Update Address</a>
+          <a class="dropdown-item" href="?action=update_address_form">Update Address</a>
         </div>
       </li>
       <li class="nav-item">

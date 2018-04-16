@@ -215,6 +215,23 @@ switch ($action) {
 
         header('Location: .?action=list_criminals');
         break;
+    //This action will take the user to the page to select a prisoner to 
+    //update.
+    case 'update_address_form':
+
+        //Getting all criminals from the DB
+        $prisoners = get_all_criminals();
+
+        include('update_address_form.php');
+        break;
+    //This action will take the user to the actual form to update address
+    case 'Update_address':
+
+        //Getting the criminal id from the user input
+        $criminal_id = filter_input(INPUT_POST, 'prisoners');
+
+        include('update_address_page.php');
+        break;
     //This case will delete a prisoner 
     case 'delete_criminal':
 
