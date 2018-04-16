@@ -137,6 +137,28 @@
     $statement->closeCursor();
   }
 
+  //This function updates the criminal address
+  function update_address($street, $town, $state, $zip, $criminal_id) {
+    global $db;
+
+    $query = 'UPDATE address 
+    SET street = :street,
+        town = :town,
+        state = :state,
+        zip = :zip
+    WHERE criminal_id = :criminal_id';
+
+    $statement = $db->prepare($query);
+    $statement->bindValue(':street', $street);
+    $statement->bindValue(':town', $town);
+    $statement->bindValue(':state', $state);
+    $statement->bindValue(':zip', $zip);
+    $statement->bindValue(':criminal_id', $criminal_id);
+    $statement->execute();
+    $statement->closeCursor();
+
+  }
+
   //This function adds a prisoner to the database
   function add_prisoner($first_name, $last_name, $phone) {
     global $db;

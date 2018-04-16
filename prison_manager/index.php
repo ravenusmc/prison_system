@@ -230,7 +230,46 @@ switch ($action) {
         //Getting the criminal id from the user input
         $criminal_id = filter_input(INPUT_POST, 'prisoners');
 
+        $address = get_address($criminal_id);
+
         include('update_address_page.php');
+        break;
+    //This action will handle all the changes to the database once the user submits
+    //the form for an updated address. 
+    case 'update_address_submit':
+
+        //Getting the user input
+        $street = filter_input(INPUT_POST, 'street');
+        $town = filter_input(INPUT_POST, 'town');
+        $state = filter_input(INPUT_POST, 'state');
+        $zip = filter_input(INPUT_POST, 'zip');
+        $criminal_id = filter_input(INPUT_POST, 'criminal_id');
+
+        //Use if statements to set the values of firstname, last name and phone
+        if (empty($street)) {
+           $address = get_address($criminal_id);
+           $street = $address['street'];
+        }
+
+        if (empty($town)) {
+           $address = get_address($criminal_id);
+           $town = $address['town'];
+        }
+
+        if (empty($state)) {
+           $address = get_address($criminal_id);
+           $state = $address['state'];
+        }
+
+        if (empty($street)) {
+           $address = get_address($criminal_id);
+           $zip = $address['zip'];
+        }
+
+        //Making he updates to the database. 
+        update_address($street, $town, $state, $zip, $criminal_id);
+
+        header('Location: .?action=list_criminals');
         break;
     //This case will delete a prisoner 
     case 'delete_criminal':
