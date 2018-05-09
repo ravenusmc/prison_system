@@ -22,6 +22,6 @@ In the Spring of 2018, I am/was taking a PHP and SQL course. For my SQL course, 
 
 # Preview
 
-To see a video that talks about this project please go here: 
+To see a video that talks about this project please go here: https://www.youtube.com/watch?v=kJjI0vdiXmU
 
-Blog entry:
+Blog entry: https://codingsaga.wordpress.com/2018/05/09/linked-lists-and-projects/
